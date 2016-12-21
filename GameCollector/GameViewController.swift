@@ -39,7 +39,15 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     } 
     
     @IBOutlet weak var cameraTapped: UIBarButtonItem!
-
+ 
     @IBAction func addTapped(_ sender: AnyObject) {
-    }
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+   
+   let game = Game(context: context)
+   game.title = titleTextField.text
+   game.image = UIImagePNGRepresentation(gameImageView.image!) as NSData?
+(UIApplication.shared.delegate as! AppDelegate).saveContext()
+
+}
+
 }
