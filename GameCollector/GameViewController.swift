@@ -48,6 +48,9 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
    game.image = UIImagePNGRepresentation(gameImageView.image!) as NSData?
 (UIApplication.shared.delegate as! AppDelegate).saveContext()
 
-}
+        navigationController?.popViewController(animated: true)
+
+    
+    }
 
 }
