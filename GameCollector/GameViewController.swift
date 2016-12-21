@@ -29,6 +29,15 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         
     }
 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        gameImageView.image = image
+      
+        imagePicker.dismiss(animated: true, completion: nil)
+    } 
+    
     @IBOutlet weak var cameraTapped: UIBarButtonItem!
 
     @IBAction func addTapped(_ sender: AnyObject) {
